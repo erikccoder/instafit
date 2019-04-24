@@ -61,9 +61,10 @@ function onRednerOutput({nativeEvent}, {dzRef, setPreview, imgSize, scale})
         domtoimage.toBlob(
             dzRef.current,
             {
-                quality: 0.95, height: viewH*outScale, width:targetW,
+                quality: 0.95,
+                height: viewH*outScale, width:targetW,
                 style:{
-                    transform: `translate3d(${offsetX}px, ${offsetY}px, 0) scale3d(${outScale}, ${outScale}, ${outScale})`
+                    transform: `translate3d(${offsetX}px, ${offsetY}px, 0) scale3d(${outScale}, ${outScale}, ${outScale})`,
                 }
             })
             .then(function (blob)

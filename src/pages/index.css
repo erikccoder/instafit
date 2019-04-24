@@ -16,6 +16,10 @@
     z-index: 1000;
 }
 
+.dragZone{
+    width: calc(96vmin - 2rem);
+}
+
 .img-wrap{
     position: relative;
     overflow: hidden;
@@ -24,6 +28,10 @@
 
     width: calc(96vmin - 2rem);
     height: calc(96vmin - 2rem);
+}
+
+.four-five .dragZone{
+    width: calc(100vmin - 2rem);
 }
 
 .four-five .img-wrap{
@@ -54,6 +62,9 @@
 
 @media (min-width: 576px)
 {
+    .dragZone{
+        width: calc(540px - 2rem);
+    }
     .img-wrap{
         position: relative;
         overflow: hidden;
@@ -64,6 +75,10 @@
         height: calc(540px - 2rem);
     }
 
+    .four-five .dragZone{
+        width: calc(540px - 2rem);
+    }
+
     .four-five .img-wrap{
         width: calc(540px - 2rem);
         height: calc((540px - 2rem)*1.25);
@@ -72,6 +87,9 @@
 
 @media (min-width: 768px)
 {
+    .four-five .dragZone{
+        width: calc(90vmin - 2rem);
+    }
     .img-wrap{
         position: relative;
         overflow: hidden;
@@ -80,6 +98,10 @@
 
         width: calc(90vmin - 2rem);
         height: calc(90vmin - 2rem);
+    }
+
+    .four-five .dragZone{
+        width: calc(90vmin - 2rem);
     }
 
     .four-five .img-wrap{

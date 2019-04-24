@@ -350,13 +350,13 @@ function DragZone({url, dzRef, setDZProps})
     }
 
     return (
-        <>
-            <div className="img-wrap mx-auto" ref={dzRef} style={{backgroundColor: bgColor}}>
+        <div className="dragZone mx-auto">
+            <div className="img-wrap" ref={dzRef} style={{backgroundColor: bgColor}}>
                 <img onLoad={e => onImgLoad(e, setImgSize)} className ={imgClass} src={url||png} style={style} alt="Preview" />
                 <div id="pan-zone" ref={panRef}></div>
             </div>
             <ColorPicker setBgColor={setBgColor} />
-        </>
+        </div>
     )
 }
 
