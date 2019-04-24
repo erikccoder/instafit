@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{49:function(t,e,n){"use strict";n.r(e);var a=n(0),r=n.n(a);e.default=function(){return r.a.createElement("div",null,r.a.createElement("p",null,"SocialFitter is a web app that fits your pictures to Instagram post and more..."))}}}]);
