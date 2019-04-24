@@ -18,7 +18,9 @@ function App() {
     <Root>
       <nav className="p-2 border-bottom bg-light">
           <div className="container px-0">
-              <Link to="/social-fitter/">Social<span className="h4 font-weight-lighter">Fitter</span></Link>
+              <Link to="/social-fitter/" className="d-block d-md-inline-block lead" >
+                  <h1 className="h4 m-0">SocialFitter</h1>
+              </Link>
               <Link to="/social-fitter/about/">About</Link>
               <a href="//windinteractive.com" target="blank"> @windinteractive </a>
           </div>

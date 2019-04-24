@@ -23,7 +23,13 @@ a:hover{
 
 nav a {
   color: #262626;
-  padding: 1rem;
+  padding: .25rem;
   display: inline-block;
 }
 
+@media (min-width: 768px)
+{
+  nav a {
+    padding: 1rem;
+  }
+}
