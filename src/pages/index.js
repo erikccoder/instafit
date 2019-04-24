@@ -195,12 +195,13 @@ export default () =>
                         onClickNHold={saveAsEvent}
                     >
                         <>
+                            4.{' '}
                             <a
                                 role="button" className={step4BtnClass} href={preview} target="_blank" download={'InstaFit-'+Date.now()}
                                 onContextMenu={saveAsEvent}
                                 onClick={saveAsEvent}
                             >
-                                4.{' '}  Right Click to Save the rendered image
+                                Right Click to Save the rendered image
                             </a>
                             <img className="w-100 mt-3" src={preview} alt="" onContextMenu={saveAsEvent} />
                         </>
