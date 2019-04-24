@@ -12,9 +12,9 @@ export default {
     port: 3000,
     host: '127.0.0.1',
   },
-  // siteRoot: "https://erikccoder.github.io",
-  // basePath: "social-fitter",
-  // assetsPath: "../social-fitter",
+  siteRoot: "https://erikccoder.github.io",
+  basePath: "social-fitter",
+  assetsPath: "../social-fitter",
   Document: ({ Html, Head, Body, children, siteData, renderMeta })=>(
       <Html lang="en-US">
       <Head>

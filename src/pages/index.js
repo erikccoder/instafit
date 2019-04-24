@@ -190,7 +190,6 @@ export default () =>
 
             <section className={step4Class}>
                 <h3  className={titleClass}>
-                    4.{' '}
                     <ClickNHold
                         time={1.5}
                         onClickNHold={saveAsEvent}
@@ -201,11 +200,9 @@ export default () =>
                                 onContextMenu={saveAsEvent}
                                 onClick={saveAsEvent}
                             >
-                                Right Click to Save the rendered image
+                                4.{' '}  Right Click to Save the rendered image
                             </a>
-                            <img className="w-100 mt-3" src={preview} alt=""
-                                 onContextMenu={saveAsEvent}
-                            />
+                            <img className="w-100 mt-3" src={preview} alt="" onContextMenu={saveAsEvent} />
                         </>
                     </ClickNHold>
                 </h3>
