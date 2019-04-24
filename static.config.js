@@ -12,9 +12,9 @@ export default {
     port: 3000,
     host: '127.0.0.1',
   },
-  siteRoot: "https://erikccoder.github.io",
-  basePath: "social-fitter",
-  assetsPath: "../social-fitter",
+  // siteRoot: "https://erikccoder.github.io",
+  // basePath: "social-fitter",
+  // assetsPath: "../social-fitter",
   Document: ({ Html, Head, Body, children, siteData, renderMeta })=>(
       <Html lang="en-US">
       <Head>
@@ -49,6 +49,15 @@ export default {
       </Head>
       <Body>
       {children}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132674150-6"></script>
+      <script dangerouslySetInnerHTML={{__html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132674150-6');
+`}}>
+      </script>
+
       </Body>
       </Html>
   ),

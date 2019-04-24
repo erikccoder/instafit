@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import domtoimage from 'dom-to-image';
+import ClickNHold from 'react-click-n-hold';
 
 import './index.css'
 import DragZone from '../components/DragZone'
@@ -22,11 +23,14 @@ function readURL({target}, setURL) {
         // reader.readAsDataURL(target.files[0]);
         var url = URL.createObjectURL(target.files[0]);
         setURL(url);
+        window.gtag('event', 'browse_file', { name : target.files[0].name });
     }
 }
 
 function radioChange({target}, SetRatio){
     SetRatio(target.value);
+    window.gtag('event', 'change_canvas_ratio', { value : target.value });
+
 }
 
 const RATIO = [
@@ -83,7 +87,7 @@ function onRednerOutput({nativeEvent}, {dzRef, setPreview, imgSize, scale})
     }
     if(!DownloadCount){cb(); DownloadCount++; }
     setTimeout(cb, 100);
-
+    window.gtag('event', 'composite_image');
 }
 
 function calcTargetW({imgSize, scale, viewport})
@@ -112,6 +116,10 @@ function calcTargetW({imgSize, scale, viewport})
         );
     }
 
+}
+
+function saveAsEvent(){
+    window.gtag('event', 'save_image');
 }
 
 
@@ -183,10 +191,23 @@ export default () =>
             <section className={step4Class}>
                 <h3  className={titleClass}>
                     4.{' '}
-                    <a role="button" className={step4BtnClass} href={preview} target="_blank" download={'InstaFit-'+Date.now()}>
-                        Right Click to Save the rendered image
-                    </a>
-                    <img className="w-100 mt-3" src={preview} alt=""/>
+                    <ClickNHold
+                        time={1.5}
+                        onClickNHold={saveAsEvent}
+                    >
+                        <>
+                            <a
+                                role="button" className={step4BtnClass} href={preview} target="_blank" download={'InstaFit-'+Date.now()}
+                                onContextMenu={saveAsEvent}
+                                onClick={saveAsEvent}
+                            >
+                                Right Click to Save the rendered image
+                            </a>
+                            <img className="w-100 mt-3" src={preview} alt=""
+                                 onContextMenu={saveAsEvent}
+                            />
+                        </>
+                    </ClickNHold>
                 </h3>
             </section>
         </div>

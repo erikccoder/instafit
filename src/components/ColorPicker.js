@@ -23,7 +23,10 @@ export default function ({setBgColor})
         <li
             className="list-inline-item p-4 rounded"
             style={{backgroundColor: c}}
-            onClick={e => setBgColor(c) }
+            onClick={e => {
+                setBgColor(c);
+                window.gtag('event', 'select_color', { color : c });
+            }}
         />
     ) );
     return (
